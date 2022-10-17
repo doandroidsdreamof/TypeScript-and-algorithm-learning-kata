@@ -1,5 +1,5 @@
 const test = (t:any) => console.log(t)
-
+// Sum All Numbers in a Range
 function sumAll(arr: number[]) {
   let sum : number = 0;
   let maxValue: number  = Math.max(...arr)
