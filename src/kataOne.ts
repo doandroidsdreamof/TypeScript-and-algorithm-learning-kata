@@ -2,7 +2,6 @@ const check = (t:any) => console.log(t)
 
 // Sum All Numbers in a Range //
  function sumAll(arr: number[]) {
-  let sum : number = 0;
   let maxValue: number  = Math.max(...arr)
   let minValue: number  = Math.min(...arr)
   let parseData : number[] = [maxValue];
@@ -19,7 +18,7 @@ const check = (t:any) => console.log(t)
 // Spinal Tap Case //
 
   function spinalCase(str: string) {
-    let upperCase: RegExp = /[A-Z]/g; // for readability
+    let upperCase: RegExp = /[A-Z]/g; 
     let regexpUnderScore: RegExp = /[_-]+/g;
     let regexpSpace: RegExp  = /\s/g;
        if (
