@@ -15,7 +15,6 @@ function sumAll(arr: number[]) {
 }
 
 // Spinal Tap Case //
-
 function spinalCase(str: string) {
   let upperCase: RegExp = /[A-Z]/g; // for readability
   let regexpUnderScore: RegExp = /[_-]+/g;
