@@ -1,4 +1,4 @@
-var now = require("performance-now")
+var now = require("performance-now");
 
 // Sum All Numbers in a Range //
 function sumAll(arr: number[]) {
@@ -50,10 +50,9 @@ function sumFibs(num: number) {
 
 // algorithm speed test //
 
-let start = now()
-console.time('test')
+let start = now();
+console.time("test");
 sumFibs(75024);
-let end = now()
-console.timeEnd('test')
+let end = now();
+console.timeEnd("test");
 console.log((end - start).toFixed(3));
-
