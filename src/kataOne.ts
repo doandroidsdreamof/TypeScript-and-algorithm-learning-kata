@@ -54,3 +54,4 @@ sumFibs(75024);
 let end = now();
 console.timeEnd("test");
 console.log((end - start).toFixed(3));
+
