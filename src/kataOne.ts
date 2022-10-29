@@ -28,7 +28,7 @@ function spinalCase(str: string) {
 }
 
 // Sum All Odd Fibonacci Numbers //
-// f(n - 1) + f(n + 1 ) //
+// Formula f(n - 1) + f(n + 1 ) //
 function sumFibs(num: number) {
   let fibonacci: number[] = [];
   let tekSayılarınToplamı = 0;
@@ -49,7 +49,6 @@ function sumFibs(num: number) {
 }
 
 // algorithm speed test //
-
 let start = now();
 console.time("test");
 sumFibs(75024);
