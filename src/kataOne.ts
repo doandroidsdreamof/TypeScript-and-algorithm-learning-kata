@@ -47,11 +47,44 @@ function sumFibs(num: number) {
   return result.reduce((acc: number, el) => acc + el);
 }
 
-// algorithm speed test //
-let start = now();
-console.time("test");
-sumFibs(75024);
-let end = now();
-console.timeEnd("test");
-console.log((end - start).toFixed(3));
 
+//  Factorial Numbers Recursion //
+function factorialRecursion(n: number): any {
+  if (n <= 1) {
+    return 1;
+  }
+  return n * factorialRecursion(n - 1);
+}
+
+
+
+let start = now();
+console.time("recursion test");
+factorialRecursion(10);
+let end = now();
+console.timeEnd("recursion test");
+console.log((end - start));
+
+
+//  Factorial without Recursion for test //
+function factorial(fac: number) {
+  let arr: any[] = [];
+  let n: number = fac + 1;
+  if (fac <= 1) {
+    return 1;
+  } else {
+    while (n > 1) {
+      n--;
+      arr.push(n);
+    }
+
+    return arr.reduce((acc, el) => (acc *= el));
+  }
+}
+
+let startNormal = now();
+console.time("normal test");
+factorial(10);
+let endNormal = now();
+console.timeEnd("normal test");
+console.log((endNormal - startNormal));
