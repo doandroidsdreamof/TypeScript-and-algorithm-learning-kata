@@ -1,30 +1,28 @@
 "use strict";
-define("factorial", ["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.factorialFunc = void 0;
-    function factorialRecursion(n) {
-        if (n <= 1) {
-            return 1;
-        }
-        return n * factorialRecursion(n - 1);
+function diffArray(arr1, arr2) {
+    const newArr = [...arr1, ...arr2];
+    return newArr.filter((el, i) => !arr2.includes(el) || !arr1.includes(el));
+}
+function factorialRecursion(n) {
+    if (n <= 1) {
+        return 1;
     }
-    function factorialFunc(fac) {
-        let arr = [];
-        let n = fac + 1;
-        if (fac <= 1) {
-            return 1;
-        }
-        else {
-            while (n > 1) {
-                n--;
-                arr.push(n);
-            }
-            return arr.reduce((acc, el) => (acc *= el));
-        }
+    return n * factorialRecursion(n - 1);
+}
+function factorialFunc(fac) {
+    let arr = [];
+    let n = fac + 1;
+    if (fac <= 1) {
+        return 1;
     }
-    exports.factorialFunc = factorialFunc;
-});
+    else {
+        while (n > 1) {
+            n--;
+            arr.push(n);
+        }
+        return arr.reduce((acc, el) => (acc *= el));
+    }
+}
 function sumFibs(num) {
     let fibonacci = [];
     let ilkDeğer = 0;

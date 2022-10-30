@@ -13,7 +13,7 @@
 
   
   //  Factorial without Recursion for test //
-  export function factorialFunc(fac: number) {
+   function factorialFunc(fac: number) {
     let arr: any[] = [];
     let n: number = fac + 1;
     if (fac <= 1) {
