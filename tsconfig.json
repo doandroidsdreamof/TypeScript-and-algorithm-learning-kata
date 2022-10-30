@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "CommonJS",
+    "module": "amd",
     "rootDirs": ["./src/**/*.ts"],
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "removeComments": true,
+    "outFile": "./dist/output.js",
     "moduleResolution": "node",    
     "allowJs": true
   },
