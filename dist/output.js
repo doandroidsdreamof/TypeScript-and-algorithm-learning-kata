@@ -62,8 +62,7 @@ function sumAll(arr) {
     return parseData.reduce((acc, el) => acc + el);
 }
 function sumPrimes(primeNumber) {
-    // In order to keep the last value inside the array perhaps that would be done in more better way //
-    let arr = [primeNumber]; 
+    let arr = [primeNumber];
     while (primeNumber > 0) {
         primeNumber--;
         arr.push(primeNumber);
@@ -78,6 +77,3 @@ function sumPrimes(primeNumber) {
     });
     return result.reduce((acc, el) => acc + el);
 }
-console.log(sumPrimes(10));
-console.log(sumPrimes(977));
-debugger;
