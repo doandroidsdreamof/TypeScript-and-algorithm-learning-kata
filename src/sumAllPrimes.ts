@@ -1,20 +1,20 @@
 // Sum all prime numbers //
 // 6n + 1 //
 function sumPrimes(primeNumber: number) {
-  let arr: any[] = [];
-  let parse: any[] = [];
-  let n: number = primeNumber;
-  let singlePrimes: number[] = [2, 3, 5, 7];
-  let oddNumbers: number[] = [];
-  while (primeNumber ) {
+  let arr: any[] = [primeNumber];
+  while (primeNumber > 0) {
     primeNumber--;
     arr.push(primeNumber);
   }
-
-
-
-
-  return oddNumbers;
+  const result: number[] = arr.filter((num) => {
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return num !== 1;
+  });
+  return result.reduce((acc, el) => acc + el);
 
   //.reduce((acc,el) => acc + el)
 }

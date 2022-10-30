@@ -27,7 +27,6 @@ define("factorial", ["require", "exports"], function (require, exports) {
 });
 function sumFibs(num) {
     let fibonacci = [];
-    let tekSayılarınToplamı = 0;
     let ilkDeğer = 0;
     let ikinciDeğer = 1;
     let n = num;
@@ -63,6 +62,22 @@ function sumAll(arr) {
     return parseData.reduce((acc, el) => acc + el);
 }
 function sumPrimes(primeNumber) {
-    return primeNumber;
+    // In order to keep the last value inside the array perhaps that would be done in more better way //
+    let arr = [primeNumber]; 
+    while (primeNumber > 0) {
+        primeNumber--;
+        arr.push(primeNumber);
+    }
+    const result = arr.filter((num) => {
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return num !== 1;
+    });
+    return result.reduce((acc, el) => acc + el);
 }
 console.log(sumPrimes(10));
+console.log(sumPrimes(977));
+debugger;
