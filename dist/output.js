@@ -1,4 +1,20 @@
 "use strict";
+function twoSum(numbers, target) {
+    let findIndexValue = [];
+    let sumAll = numbers.reduce((total, currentValue) => (total += currentValue));
+    let findValue = [];
+    for (let i = 0; i < numbers.length; i++) {
+        findIndexValue.push(i);
+        if (sumAll - numbers[i] === target) {
+            findValue.push(...`${i}:`, numbers[i]);
+        }
+    }
+    return findIndexValue.filter((el) => el != findValue[0]);
+}
+console.log(twoSum([1, 2, 3], 4));
+console.log(twoSum([1234, 5678, 9012], 14690));
+console.log(twoSum([2, 2, 3], 4));
+debugger;
 function diffArray(arr1, arr2) {
     const newArr = [...arr1, ...arr2];
     return newArr.filter((el, i) => !arr2.includes(el) || !arr1.includes(el));
