@@ -1,19 +1,25 @@
 "use strict";
 function twoSum(numbers, target) {
-    let findIndexValue = [];
-    let sumAll = numbers.reduce((total, currentValue) => (total += currentValue));
-    let findValue = [];
     for (let i = 0; i < numbers.length; i++) {
-        findIndexValue.push(i);
-        if (sumAll - numbers[i] === target) {
-            findValue.push(...`${i}:`, numbers[i]);
+        for (let j = 0; i < numbers.length; j++) {
+            if ((numbers[i] + numbers[j]) === target) {
+                return [i, j];
+            }
         }
     }
-    return findIndexValue.filter((el) => el != findValue[0]);
 }
 console.log(twoSum([1, 2, 3], 4));
-console.log(twoSum([1234, 5678, 9012], 14690));
 console.log(twoSum([2, 2, 3], 4));
+console.log(twoSum([1234, 5678, 9012], 14690));
+console.log(twoSum([2, 7, 11, 15], 9));
+console.log(twoSum([
+    -102, -809, 798, 590, -274, -505, 168, 578, 129, -73, -435, -132,
+    -300, -999, 226, -576, 642, 80, -34, -597, 440, 682, 56, 501, -804,
+    -625, -758, 474, -17, -551, 729, -630, -310, 781, 298, 948, 197,
+    175, -620, 361, -232, 392, -377, 24, -580, 155, -893, 256, 867, 599,
+    -692, 635, -873, -438, -398, -409, 471, -124, -120, 218, 159, -259,
+    20, 212, -827,
+], 453));
 debugger;
 function diffArray(arr1, arr2) {
     const newArr = [...arr1, ...arr2];
@@ -55,6 +61,10 @@ function sumFibs(num) {
     let result = tekSayılar.filter((el, i) => el <= n);
     return result.reduce((acc, el) => acc + el);
 }
+var isPalindrome = function (palindrome) {
+    let arr1 = [...palindrome.toString()].reverse();
+    return (parseInt(arr1.join('')) - palindrome) === 0;
+};
 function spinalCase(str) {
     let upperCase = /[A-Z]/g;
     let regexpUnderScore = /[_-]+/g;
@@ -90,4 +100,14 @@ function sumPrimes(primeNumber) {
         return num !== 1;
     });
     return result.reduce((acc, el) => acc + el);
+}
+function getCount(str) {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    let diff = [...str.trim().replace(/\s+/g, '')];
+    let value = [];
+    let count = 0;
+    for (let i = 0; i < vowels.length; i++) {
+        value.push(...diff.filter((el, index) => el.includes(vowels[i])));
+    }
+    return value.length;
 }
