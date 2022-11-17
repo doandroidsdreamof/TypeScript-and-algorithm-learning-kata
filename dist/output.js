@@ -1,26 +1,16 @@
 "use strict";
 function twoSum(numbers, target) {
+    let hash = {};
+    numbers.forEach((key, value) => {
+        hash[key] = value;
+    });
     for (let i = 0; i < numbers.length; i++) {
-        for (let j = 0; i < numbers.length; j++) {
-            if ((numbers[i] + numbers[j]) === target) {
-                return [i, j];
-            }
+        const secondValue = target - numbers[i];
+        if (hash[secondValue] !== undefined && hash[secondValue] !== i) {
+            return [i, hash[secondValue]];
         }
     }
 }
-console.log(twoSum([1, 2, 3], 4));
-console.log(twoSum([2, 2, 3], 4));
-console.log(twoSum([1234, 5678, 9012], 14690));
-console.log(twoSum([2, 7, 11, 15], 9));
-console.log(twoSum([
-    -102, -809, 798, 590, -274, -505, 168, 578, 129, -73, -435, -132,
-    -300, -999, 226, -576, 642, 80, -34, -597, 440, 682, 56, 501, -804,
-    -625, -758, 474, -17, -551, 729, -630, -310, 781, 298, 948, 197,
-    175, -620, 361, -232, 392, -377, 24, -580, 155, -893, 256, 867, 599,
-    -692, 635, -873, -438, -398, -409, 471, -124, -120, 218, 159, -259,
-    20, 212, -827,
-], 453));
-debugger;
 function diffArray(arr1, arr2) {
     const newArr = [...arr1, ...arr2];
     return newArr.filter((el, i) => !arr2.includes(el) || !arr1.includes(el));
@@ -61,6 +51,28 @@ function sumFibs(num) {
     let result = tekSayılar.filter((el, i) => el <= n);
     return result.reduce((acc, el) => acc + el);
 }
+function findOdd(A) {
+    let hash = {};
+    A.forEach((current, currentIndex, arr) => {
+        if (hash[current] == hash[current]) {
+            hash[current] = hash[current] + 1;
+        }
+        if (hash[current] != hash[current]) {
+            hash[current] = 1;
+        }
+    });
+    for (let x in hash) {
+        if (hash[x] % 2 === 0) {
+            delete hash[x];
+        }
+    }
+    let result = Object.keys(hash);
+    return parseInt(result);
+}
+console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
+console.log(findOdd([0, 1, 0, 1, 0]));
+console.log(findOdd([1, 1, 2]));
+debugger;
 var isPalindrome = function (palindrome) {
     let arr1 = [...palindrome.toString()].reverse();
     return (parseInt(arr1.join('')) - palindrome) === 0;

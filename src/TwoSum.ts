@@ -1,5 +1,5 @@
 // Two Sum //
-// based on code wars question //
+// based on code wars challenge //
 // https://www.codewars.com/kata/52c31f8e6605bcc646000082/train/javascript //
 
 function twoSum(numbers: any[], target: number) {
@@ -14,3 +14,4 @@ function twoSum(numbers: any[], target: number) {
         }
     }
 }
+
