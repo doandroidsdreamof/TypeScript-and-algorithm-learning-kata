@@ -11,6 +11,23 @@ function twoSum(numbers, target) {
         }
     }
 }
+function count(string) {
+    let hash = {};
+    let arr = [...string];
+    let value = 0;
+    arr.forEach((currentValue, index) => {
+        if (hash[currentValue] == hash[currentValue]) {
+            hash[currentValue] += 1;
+        }
+        if (hash[currentValue] != hash[currentValue]) {
+            hash[currentValue] = 1;
+        }
+    });
+    return hash;
+}
+console.log(count("aba"));
+console.log(count("aa"));
+debugger;
 function diffArray(arr1, arr2) {
     const newArr = [...arr1, ...arr2];
     return newArr.filter((el, i) => !arr2.includes(el) || !arr1.includes(el));
@@ -53,7 +70,7 @@ function sumFibs(num) {
 }
 function findOdd(A) {
     let hash = {};
-    A.forEach((current, currentIndex, arr) => {
+    A.forEach((current) => {
         if (hash[current] == hash[current]) {
             hash[current] = hash[current] + 1;
         }
@@ -69,8 +86,6 @@ function findOdd(A) {
     let result = Object.keys(hash);
     return parseInt(result);
 }
-console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
-console.log(findOdd([0, 1, 0, 1, 0]));
 console.log(findOdd([1, 1, 2]));
 debugger;
 var isPalindrome = function (palindrome) {

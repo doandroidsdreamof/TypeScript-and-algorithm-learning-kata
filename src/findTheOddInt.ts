@@ -11,6 +11,7 @@ function findOdd(A: any[]) {
         }
         if (hash[current] != hash[current]) {
             hash[current] = 1;
+
         }
     });
     for (let x in hash) {
@@ -21,5 +22,10 @@ function findOdd(A: any[]) {
     }
     let result: any = Object.keys(hash);
     return parseInt(result);
+
 }
+
+
+console.log(findOdd([1, 1, 2])); // 2
+debugger;
 
