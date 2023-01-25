@@ -11,6 +11,21 @@ function twoSum(numbers, target) {
         }
     }
 }
+var containsDuplicate = function (nums) {
+    const result = nums.reduce((accumulator, current) => {
+        if (accumulator === current) {
+            return 0;
+        }
+        if (accumulator !== current) {
+            return 1;
+        }
+    });
+    return result === 1 ? true : false;
+};
+console.log(containsDuplicate([1, 2, 3, 1]));
+console.log(containsDuplicate([1, 2, 3, 4]));
+console.log(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));
+debugger;
 function count(string) {
     let hash = {};
     let arr = [...string];
